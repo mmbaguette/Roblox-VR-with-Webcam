@@ -43,7 +43,7 @@ ending_char = 'c'
 
 # -----DO NOT EDIT-----
 
-while True:
+while True: # automatically download missing dependencies
     try:
         import requests as rq
         import mediapipe as mp  # mediapipe depends on opencv
