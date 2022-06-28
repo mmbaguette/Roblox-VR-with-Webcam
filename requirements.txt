@@ -1,0 +1,3 @@
+mediapipe # requires opencv-python and numpy anyway
+pydirectinput
+xkkztveejtveyjzqvehjevqljkzevfhjtveyjevtpjqvgrljkzevrtjtveyjzrvufjqvfpljkzevpujtveyjzeveyjqvyeljkzevfjtveyjzrvgjqvtpljkzrvrjtveyjzqvqtjqvqljkzrvhjtveyjze

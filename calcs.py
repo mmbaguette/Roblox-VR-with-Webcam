@@ -43,7 +43,7 @@ def angles(rot_matrix: np.matrix): # https://stackoverflow.com/a/64336115
 		yaw_1 = atan2( R21 / cos(pitch_1) , R11 / cos(pitch_1) )
 		yaw_2 = atan2( R21 / cos(pitch_2) , R11 / cos(pitch_2) ) 
 
-		pitch = pitch_2 
+		pitch = pitch_2
 		roll = roll_2
 		yaw = yaw_2
 	else: 
@@ -54,50 +54,4 @@ def angles(rot_matrix: np.matrix): # https://stackoverflow.com/a/64336115
 		else: 
 			pitch = -pi/2 
 			roll = -1*yaw + atan2(-1*R12,-1*R13) 
-
-	# convert from radians to degrees
-	# roll = math.degrees(roll)
-	# pitch = math.degrees(pitch)
-	# yaw = math.degrees(yaw)
 	return roll, pitch, yaw
-'''
-def angles(matrix: np.matrix):
-	# epsilon for testing whether a number is close to zero
-	_EPS = np.finfo(float).eps * 5.0
-
-	# axis sequences for Euler angles
-	_NEXT_AXIS = [1, 2, 0, 1]
-	firstaxis, parity, repetition, frame = (1, 1, 0, 0) # ''
-
-	i = firstaxis
-	j = _NEXT_AXIS[i+parity]
-	k = _NEXT_AXIS[i-parity+1]
-
-	M = np.array(matrix, dtype='float', copy=False)[:3, :3]
-	if repetition:
-		sy = np.sqrt(M[i, j]*M[i, j] + M[i, k]*M[i, k])
-		if sy > _EPS:
-			ax = np.arctan2( M[i, j],  M[i, k])
-			ay = np.arctan2( sy,       M[i, i])
-			az = np.arctan2( M[j, i], -M[k, i])
-		else:
-			ax = np.arctan2(-M[j, k],  M[j, j])
-			ay = np.arctan2( sy,       M[i, i])
-			az = 0.0
-	else:
-		cy = np.sqrt(M[i, i]*M[i, i] + M[j, i]*M[j, i])
-		if cy > _EPS:
-			ax = np.arctan2( M[k, j],  M[k, k])
-			ay = np.arctan2(-M[k, i],  cy)
-			az = np.arctan2( M[j, i],  M[i, i])
-		else:
-			ax = np.arctan2(-M[j, k],  M[j, j])
-			ay = np.arctan2(-M[k, i],  cy)
-			az = 0.0
-
-	if parity:
-		ax, ay, az = -ax, -ay, -az
-	if frame:
-		ax, az = az, ax
-	return ax, ay, az
-'''
