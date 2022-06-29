@@ -5,19 +5,23 @@ import calcs
 import threading
 print("Loading extensions...")  # also called libraries
 
-# -----EDIT THESE VALUES-----
+"-----EDIT THESE VALUES-----"
 # are we uploading to the server or only testing the pose tracking?
-uploading = True  
+uploading = True
 # Roblox username of player
-username = "AerodynamicRocket"  
+username = "AerodynamicRocket"
 # move {username} to wherever the player's username should be inserted into the URL
 upload_url = f"https://mmbaguette.pythonanywhere.com/upload_pose/{username}"
+# how long in seconds between each pose update (less seconds = more data uploaded to server = lag)
+cooldown = 0.2
+# True/False are we using the typing input feature? (read instructions)
+typing_input = False
+
+"-----FOR TYPING FEATURE WITHOUT SERVER ()-----"
 # when the program starts, how long does it take for the autoclicker to the send data through the roblox keyboard
 start_typing_delay = 2  # seconds
 # interval between each key press. lower = faster results, but maybe not all computers can handle it
-press_delay = 0.001
-# how long in seconds between each pose update (less seconds = more data uploaded to server = lag) 
-cooldown = 2
+press_delay = 0.002
 # don't use any of the "Magic Characters" as one of the autoclicker's keys.
 # https://developer.roblox.com/en-us/articles/string-patterns-reference#magic-characters
 key_map = {  # what the autoclicker will press vs. what the actual value of the key is.
@@ -38,12 +42,12 @@ key_map = {  # what the autoclicker will press vs. what the actual value of the 
     "v": "."
 }
 
-starting_char = 'x' # charaters that will indicate the start or end of the data
+starting_char = 'x'  # charaters that will indicate the start or end of the data
 ending_char = 'c'
 
 # -----DO NOT EDIT-----
 
-while True: # automatically download missing dependencies
+while True:  # automatically download missing dependencies
     try:
         import requests as rq
         import mediapipe as mp  # mediapipe depends on opencv
@@ -71,7 +75,7 @@ mp_pose = mp.solutions.pose
 def replace_all(string: str):
     for i in key_map:
         v = str(key_map[i])
-        string = string.replace(v, i) # must reassign after replacing strings
+        string = string.replace(v, i)  # must reassign after replacing strings
     return string
 
 
@@ -104,7 +108,7 @@ def assign_angles(vector1: str, vector2: str, repeat_side: bool = False):
                       vector2.replace("left", "right"))
 
 
-def keep_uploading():
+def keep_uploading():  # runs on a separate thread
     "Allow pose landmark to be uploaded without interrupting pose processing"
     last_sequence_num = 1
     requests_this_minute = 0
@@ -117,25 +121,31 @@ def keep_uploading():
 
         elif sequence_num > last_sequence_num:
             if (time.time() - last_request_sent >= cooldown):
-                # try:
-                #     r = rq.post(url=upload_url, json=sent_data)
-                # except rq.ConnectTimeout as e:
-                #     print(e)
-                #     continue
-                pydirectinput.press(starting_char)
-                raw_json = json.dumps(sent_data)
-                string_data = replace_all(raw_json.replace(" ", ""))
-                pydirectinput.write(string_data)
-                pydirectinput.press(ending_char)
+                if (typing_input):  # if using the typing feature
+                    # indicate that this is a new list
+                    pydirectinput.press(starting_char)
+                    # parse pose data as json string
+                    raw_json = json.dumps(sent_data)
+                    string_data = replace_all(
+                        raw_json.replace(" ", ""))  # remove spaces
+                    pydirectinput.write(string_data)  # type it all out
+                    # indicate that this is the end of the pose data list
+                    pydirectinput.press(ending_char)
+                else:  # otherwise upload to server
+                    try:
+                        r = rq.post(url=upload_url, json=sent_data)
+                    except rq.ConnectTimeout as e:
+                        print(e)
+                        continue
 
-                requests_this_minute += 1
-                last_request_sent = time.time()
+                    requests_this_minute += 1
+                    last_request_sent = time.time()
 
-                # if r.status_code == 200:  # success
-                #     last_sequence_num = sequence_num
-                # else:  # failure
-                #     print(f"Status code: {r.status_code}")
-                #     print(f"Response body: {r.text}")
+                    if r.status_code == 200:  # success
+                        last_sequence_num = sequence_num
+                    else:  # failure
+                        print(f"Status code: {r.status_code}")
+                        print(f"Response body: {r.text}")
 
             if time.time() - last_request_count_time >= 60:  # every 60 seconds display requests counter
                 print(f"Requests this minute: {requests_this_minute}")
@@ -157,6 +167,7 @@ def main():
     cap = cv2.VideoCapture(0, cv2.CAP_DSHOW)
     cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1280)
     cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 720)
+    print("Initializing pose detection...")
 
     with mp_pose.Pose(
             min_detection_confidence=0.7,
@@ -304,9 +315,10 @@ def main():
 
 
 if __name__ == '__main__':
-    input("Press Enter in the console to begin the program. "
-          + f"The script will begin typing on the screen in {start_typing_delay} "
-          + "seconds, so make sure Roblox is in focus.")
+    if typing_input:
+        input("Press Enter in the console to begin the program. "
+              + f"The script will begin typing on the screen in {start_typing_delay} "
+              + "seconds, so make sure Roblox is in focus.")
     time.sleep(start_typing_delay)
     upload_process = threading.Thread(target=keep_uploading)
     upload_process.start()
