@@ -7,7 +7,7 @@ print("Loading extensions...")  # also called libraries
 
 "-----EDIT THESE VALUES-----"
 # Roblox username of player
-username = "AerodynamicRocket"
+username = "MyRobloxUsername"
 # AUTHORIZATION token (games will ask you for this)
 authorization = "CHANGE-ME"
 # move {username} to wherever the player's username should be inserted into the URL
