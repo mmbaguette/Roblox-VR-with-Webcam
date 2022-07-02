@@ -6,15 +6,17 @@ import threading
 print("Loading extensions...")  # also called libraries
 
 "-----EDIT THESE VALUES-----"
-# are we uploading to the server or only testing the pose tracking?
-uploading = True
 # Roblox username of player
 username = "AerodynamicRocket"
+# AUTHORIZATION token (games will ask you for this)
+authorization = "T5AT3z-x4qw"
 # move {username} to wherever the player's username should be inserted into the URL
 upload_url = f"https://mmbaguette.pythonanywhere.com/upload_pose/{username}"
+# rotate the other direction (True/False case-sensitive)
+
 # how long in seconds between each pose update (less seconds = more data uploaded to server = lag)
 cooldown = 0.2
-# True/False are we using the typing input feature? (read instructions)
+# are we using the typing input feature (True/False case-sensitive)?
 typing_input = False
 
 "-----FOR TYPING FEATURE WITHOUT SERVER ()-----"
@@ -46,6 +48,9 @@ starting_char = 'x'  # charaters that will indicate the start or end of the data
 ending_char = 'c'
 
 # -----DO NOT EDIT-----
+
+# are we uploading to the server or only testing the pose tracking?
+uploading = True
 
 while True:  # automatically download missing dependencies
     try:
@@ -114,6 +119,7 @@ def keep_uploading():  # runs on a separate thread
     requests_this_minute = 0
     last_request_count_time = time.time()
     last_request_sent = last_request_count_time
+    request_headers = {"authorization": authorization}
 
     while True:
         if sequence_num == 0:  # stop program
@@ -133,7 +139,8 @@ def keep_uploading():  # runs on a separate thread
                     pydirectinput.press(ending_char)
                 else:  # otherwise upload to server
                     try:
-                        r = rq.post(url=upload_url, json=sent_data)
+                        r = rq.post(url=upload_url, json=sent_data,
+                                    headers=request_headers)
                     except rq.ConnectTimeout as e:
                         print(e)
                         continue
