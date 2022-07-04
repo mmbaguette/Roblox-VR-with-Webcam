@@ -1,4 +1,4 @@
-# 3D Virtual Reality in Roblox using a Webcam
+# Virtual Reality in Roblox using a Webcam
 
 Control your Roblox character's full body like in VR, but using only a webcam and no headset.
 
