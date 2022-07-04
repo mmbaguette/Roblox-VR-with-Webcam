@@ -6,8 +6,8 @@ Control your Roblox character's full body using only a webcam, and no headset.
 
 ## Features
 
-- Control your R15, full body pose
-- Copies your body's movements in real life
+- Control your R15 character pose (neck, shoulders, elbows, hips, legs and knees)
+- Copies your entire body's movements from reality
 - One-dimensional, flat body rotations (for now)
 - Side-to-side head movements
 - Real-time pose tracking using your webcam
@@ -16,7 +16,7 @@ Control your Roblox character's full body using only a webcam, and no headset.
 
 ## How it works
 
-A Python script that runs alongside Roblox on your computer captures your webcam footage. Using an advanced AI pose-estimation model from **Google**, it calculates your 3D rotations for every joint in your body. Next, this pose data is immediately forwarded to a server that anyone can setup. Finally, a Roblox server making up to 500 requests a minute downloads your body pose to move you real time.
+A Python script/program on your PC captures your webcam footage. Using an advanced, AI, pose-estimation model from **Google/Mediapipe**, it calculates your 3D rotations for every joint in your body. Next, this pose data is immediately forwarded to a server that anyone can setup. Finally, a Roblox server making up to 500 requests a minute downloads your body pose to move you real time.
 
 ![Pose Upload Diagram Roblox VR](https://user-images.githubusercontent.com/76597978/177061058-7f928a18-645c-41b3-a146-7886befbde47.png)
 
