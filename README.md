@@ -4,6 +4,8 @@ Control your Roblox character's full body using only a webcam, and no headset.
 
 ![Roblox_VR_with_Webcam_Good](https://user-images.githubusercontent.com/76597978/177058172-8a5cecb1-5693-42e7-9cfb-2e9d0b853cd0.gif)
 
+Scroll down for setup and instructions.
+
 ## Features
 
 - Control your R15 character pose (neck, shoulders, elbows, hips, legs and knees)
@@ -28,12 +30,12 @@ You might be wondering, **how is this possible?** How is a computer capable of t
 
 This is where **MediaPipe** comes in, an open-source project from Google that provides several computer vision, machine learning/AI models for anyone to use, including their pose estimation solution. Check out https://google.github.io/mediapipe/solutions/pose for more info. So no, I didn't make the AI model.
 
-## How to use
+## Setup
 
 To get started playing games now, go to **client setup**.
 To setup a Roblox game for players to join and use this program, go to **game setup**.
 
-### Client Setup
+## Client Setup
 
 Start playing on any game that already has the server-side and Roblox game setup.
 
@@ -50,7 +52,7 @@ Start playing on any game that already has the server-side and Roblox game setup
 
 Make sure your webcam is plugged in and ready. When you run the program, a window will pop up revealing your camera. Position yourself far enough so that the white lines cover your whole body or the part you want to control.
 
-### Game Setup
+## Game Setup
 
 Allow your players to take advantage of this technology. Two things: Roblox game setup and online server setup.
 
