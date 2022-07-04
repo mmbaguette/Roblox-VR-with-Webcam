@@ -42,7 +42,7 @@ Start playing on any game that already has the server-side and Roblox game setup
 - Start by downloading the [Python programming language](https://www.python.org)
   - More info: https://www.pythontutorial.net/getting-started/install-python/
 - Download this repository: click on the green *Code* button > Download as ZIP
-- Open the file `main.py` in a text editor like Notepad or an IDE like [vscode](code.visualstudio.com)
+- Open the file `main.py` in a text editor like Notepad or an IDE like [Visual Studio Code](https://code.visualstudio.com)
 - Edit the following variables at the top:
   - **username**: Change this to your Roblox username, not your display name
   - **authorization**: A **temporary** access token used by servers to verify your identity. A *3D Roblox* button in supported games will appear and give you instructions to use this (required).
