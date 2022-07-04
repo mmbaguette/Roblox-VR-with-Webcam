@@ -1,4 +1,4 @@
-# 3D-Virtual Reality in Roblox using a Webcam
+# 3D Virtual Reality in Roblox using a Webcam
 
 Control your Roblox character's full body using only a webcam, and no headset.
 
@@ -33,7 +33,7 @@ This is where **MediaPipe** comes in, an open-source project from Google that pr
 To get started playing games now, go to **client setup**.
 To setup a Roblox game for players to join and use this program, go to **game setup**.
 
-# Client Setup
+### Client Setup
 
 Start playing on any game that already has the server-side and Roblox game setup.
 
