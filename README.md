@@ -45,7 +45,7 @@ Start playing on any game that already has the server-side and Roblox game setup
 - Open the file `main.py` in a text editor like Notepad or an IDE like [vscode](code.visualstudio.com)
 - Edit the following variables at the top:
   - **username**: Change this to your Roblox username, not your display name
-  - **authorization**: A string value used as an access token for servers to verify your identity. A *3D Roblox* button in supported games will appear and give you instructions for this.
+  - **authorization**: A **temporary** string value used as an access token for servers to verify your identity. A *3D Roblox* button in supported games will appear and give you instructions to use this (required).
   - **upload_url**: The URL of the HTTP request that will upload the pose data every **cooldown** seconds.
   - **cooldown**: Delay in seconds between each upload request. You don't need to change this.
 - Now run the Python script `main.py` by double clicking the file to open with Python, or right click on the file on Windows > Open with > Python or open up a command prompt or terminal, and type `python [FILEPATH TO main.py]`
