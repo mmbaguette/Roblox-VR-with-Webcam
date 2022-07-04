@@ -28,7 +28,7 @@ You might be wondering, **how is this possible?** How is a computer capable of t
 
 ![pose gif mediapipe](https://user-images.githubusercontent.com/76597978/177061310-efbf795e-42d4-4f07-97b7-9a7236cde33a.gif)
 
-This is where **MediaPipe** comes in, an open-source project from Google that provides several computer vision, machine learning/AI models for anyone to use, including their pose estimation solution. Check out https://google.github.io/mediapipe/solutions/pose for more info. So no, I didn't make the AI model.
+This is where **MediaPipe** comes in, an open-source project from Google that provides several computer vision, machine learning/AI models for anyone to use, including their pose estimation solution. Check out https://google.github.io/mediapipe/solutions/pose for more info. 
 
 ## Setup
 
