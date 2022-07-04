@@ -39,7 +39,7 @@ To setup a Roblox game for players to join and use this program, go to **game se
 
 Start playing on any game that already has the server-side and Roblox game setup.
 
-- Start by downloading the [Python programming language](www.python.org)
+- Start by downloading the [Python programming language](https://www.python.org)
   - More info: https://www.pythontutorial.net/getting-started/install-python/
 - Download this repository: click on the green *Code* button > Download as ZIP
 - Open the file `main.py` in a text editor like Notepad or an IDE like [vscode](code.visualstudio.com)
