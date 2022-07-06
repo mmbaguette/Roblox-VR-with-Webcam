@@ -52,6 +52,8 @@ Start playing on any game that already has the server-side and Roblox game setup
 
 Make sure your webcam is plugged in and ready. When you run the program, a window will pop up revealing your camera. Position yourself far enough so that the white lines cover your whole body or the part you want to control.
 
+**My personal testing game**: https://www.roblox.com/games/5008701446/VR-using-a-Webcam
+
 ## Game Setup
 
 Allow your players to take advantage of this technology. Two things: Roblox game setup and online server setup.
