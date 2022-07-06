@@ -59,5 +59,7 @@ Make sure your webcam is plugged in and ready. When you run the program, a windo
 Allow your players to take advantage of this technology. Two things: Roblox game setup and online server setup.
 Roblox model: https://www.roblox.com/library/10129626203/Virtual-Reality-and-3D-Camera
 
+- Make sure you players' characters are in R15 or this will not work!
+
 Under Construction 🚧
 (too lazy to write rn) 
