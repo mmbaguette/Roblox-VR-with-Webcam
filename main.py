@@ -7,9 +7,9 @@ print("Loading extensions...")  # also called libraries
 
 "-----EDIT THESE VALUES-----"
 # Roblox username of player
-username = "AerodynamicRocket"
+username = "MyRobloxUsername"
 # AUTHORIZATION token (games will ask you for this)
-authorization = "T5AT3z-x4qw"
+authorization = "CHANGE-ME"
 # move {username} to wherever the player's username should be inserted into the URL
 upload_url = f"https://mmbaguette.pythonanywhere.com/upload_pose/{username}"
 # rotate the other direction (True/False case-sensitive)
