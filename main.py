@@ -10,9 +10,9 @@ print("Loading extensions...")  # also called libraries
 username = "MyRobloxUsername"
 # AUTHORIZATION token (games will ask you for this)
 authorization = "CHANGE-ME"
-# move {username} to wherever the player's username should be inserted into the URL. 
-upload_url = f"https://www.example.com/upload_pose/{username}" # this value should be given from the roblox game.
-# rotate the other direction (True/False case-sensitive)
+# SERVER OWNERS (not players): move {username} to wherever the player's username should be inserted into the URL. 
+# PLAYERS: this value should be given from the roblox game.
+upload_url = f"https://www.example.com/upload_pose/{username}" 
 
 # how long in seconds between each pose update (less seconds = more data uploaded to server = lag)
 cooldown = 0.2
