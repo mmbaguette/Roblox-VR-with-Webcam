@@ -1,7 +1,6 @@
 import subprocess
 import json
 import time
-import calcs
 import threading
 print("Loading extensions...")  # also called libraries
 
@@ -59,13 +58,13 @@ while True:  # automatically download missing dependencies
         import cv2  # which depends on numpy
         import numpy as np
         import pydirectinput
+        import calcs
         pydirectinput.PAUSE = press_delay  # short keypress delay
         break
     except ImportError as e:
         print("Missing 1 or more dependencies.", e)
         print("Downloading dependencies now.")
         subprocess.run("python -m pip install -r requirements.txt", shell=True)
-        break
 
 roblox_rotations = {}
 roblox_landmarks = {}
