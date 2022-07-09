@@ -111,4 +111,6 @@ def get_temporary_keys(username):
     return resp
 
 if __name__ == '__main__': 
-    app.run() # on pythonanywhere servers, you can only use app.run() for Flask apps if it's in this __main__ clause
+    from waitress import serve
+    print("Production server is ready - connections are now being accepted. (Press CTRL+C to quit)")
+    serve(app, host="0.0.0.0", port=3000)

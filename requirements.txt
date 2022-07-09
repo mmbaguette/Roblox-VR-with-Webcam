@@ -1,2 +1,4 @@
 mediapipe # requires opencv-python and numpy anyway
 PyDirectInput
+flask
+waitress
