@@ -42,6 +42,7 @@ To setup a Roblox game for players to join and use this program, go to **game se
 Start playing on any game that already has the server-side and Roblox game setup.
 
 - Start by downloading the [Python programming language](https://www.python.org)
+  - **Windows users**: Reccomended that you install Python through the Microsoft store (sometimes the `python` command doesn't work from setup app)
   - More info: https://www.pythontutorial.net/getting-started/install-python/
 - Download this repository: click on the green *Code* button > Download as ZIP
 - Open the file `main.py` in a text editor like Notepad or an IDE like [Visual Studio Code](https://code.visualstudio.com)
@@ -61,7 +62,7 @@ Make sure your webcam is plugged in and ready. When you run the program, a windo
 Allow your players to take advantage of this technology. Two things: Roblox game setup and online server setup.
 
 - Roblox model: https://www.roblox.com/library/10129626203/Virtual-Reality-and-3D-Camera
-- Make sure you players' characters are in R15 or this will not work!
+- Make sure your players' characters are in R15 or this will not work!
 
 Under Construction 🚧
 (too lazy to write rn) 
