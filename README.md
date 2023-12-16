@@ -4,9 +4,9 @@ Control your Roblox character's full body like in VR, but using only a webcam an
 
 ![Roblox_VR_with_Webcam_Good](https://user-images.githubusercontent.com/76597978/177058172-8a5cecb1-5693-42e7-9cfb-2e9d0b853cd0.gif)
 
-Roblox Developer Forum post: https://devforum.roblox.com/t/virtual-reality-using-only-a-webcam/1861107?u=aerodynamicrocket
+*Video of man in video is from [Back Intelligence YouTube](https://www.youtube.com/watch?v=vuGnzLxRvZM)*
 
-Scroll down for setup and instructions.
+Roblox Developer Forum post: https://devforum.roblox.com/t/virtual-reality-using-only-a-webcam/1861107?u=aerodynamicrocket
 
 ## Features
 
@@ -55,8 +55,6 @@ Start playing on any game that already has the server-side and Roblox game setup
 
 Make sure your webcam is plugged in and ready. When you run the program, a window will pop up revealing your camera. Position yourself far enough so that the white lines cover your whole body or the part you want to control.
 
-**My personal testing game**: https://www.roblox.com/games/5008701446/VR-using-a-Webcam
-
 ## Game Setup
 
 Allow your players to take advantage of this technology. Two things: Roblox game setup and online server setup.
@@ -65,4 +63,3 @@ Allow your players to take advantage of this technology. Two things: Roblox game
 - Make sure your players' characters are in R15 or this will not work!
 
 Under Construction 🚧
-(too lazy to write rn) 
